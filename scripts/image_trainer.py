@@ -157,7 +157,7 @@ def create_config(task_id, model, model_type, expected_repo_name=None, hours_to_
     time_limit = 15
 
     warmup_percent = 0.11
-    warmup_limit = 15
+    warmup_limit = 10
     warmup_step = 10
 
     """Create the diffusion config file"""
@@ -258,7 +258,7 @@ def create_config(task_id, model, model_type, expected_repo_name=None, hours_to_
 def run_training(task_id, model, model_type, expected_repo_name, hours_to_complete=2):
     start_time = time.time()
 
-    docker_level = ["mix","live","low"]
+    docker_level = ["mix","win","live","low"]
     docker_batch = [8,8,8,4,4,4]
     docker_seq = ["1024,1024","768,768","512,512","1024,1024","768,768","512,512","1024,1024","768,768","512,512","1024,1024","768,768","512,512"]
     docker_lrate = 0.0002
@@ -466,7 +466,7 @@ def run_training(task_id, model, model_type, expected_repo_name, hours_to_comple
                 idx = idx + 1
                 docker_failed = True
 
-                raise RuntimeError(f"Training subprocess failed with exit code {e.returncode}")
+                # raise RuntimeError(f"Training subprocess failed with exit code {e.returncode}")
 
 
     except Exception as e:
@@ -677,7 +677,7 @@ def run_training(task_id, model, model_type, expected_repo_name, hours_to_comple
                     idx = idx + 1
                     docker_failed = True
 
-                    raise RuntimeError(f"Training subprocess failed with exit code {e.returncode}")
+                    # raise RuntimeError(f"Training subprocess failed with exit code {e.returncode}")
 
 
         except Exception as e:
