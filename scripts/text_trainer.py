@@ -1916,7 +1916,7 @@ def create_config(task_id, model, dataset, dataset_type, file_format, output_dir
 
     warmup_percent = 0.11
     warmup_limit = 15
-    warmup_step = 30
+    warmup_step = 10
 
     """Create the axolotl config file with appropriate settings."""
     config_path = get_axolotl_base_config_path(dataset_type, level)
