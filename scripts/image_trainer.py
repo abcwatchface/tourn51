@@ -259,7 +259,7 @@ def run_training(task_id, model, model_type, expected_repo_name, hours_to_comple
     start_time = time.time()
 
     docker_level = ["mix","win","live","low"]
-    docker_batch = [8,8,8,4,4,4]
+    docker_batch = [12,12,12,8,8,8,4,4,4]
     docker_seq = ["1024,1024","768,768","512,512","1024,1024","768,768","512,512","1024,1024","768,768","512,512","1024,1024","768,768","512,512"]
     docker_lrate = 0.0002
     docker_runtime = 10
